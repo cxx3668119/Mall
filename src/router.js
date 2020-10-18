@@ -9,17 +9,22 @@ import Order from './pages/order';
 import OrderConfirm from './pages/orderConfirm';
 import OrderList from './pages/orderList';
 import OrderPay from './pages/orderPay';
+import Alipay from './pages/alipay.vue'
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '',
+      redirect: '/index'
+    },
+    {
+      path: '/home',
       name: 'home',
       component: Home,
       children: [
         {
-          path: '/',
+          path: '/index',
           name: 'index',
           component: Index,
         }, {
@@ -44,20 +49,25 @@ export default new Router({
       component: Order,
       children: [
         {
-          path: '/list',
+          path: 'list',
           name: 'order-list',
           component: OrderList,
         },
         {
-          path: '/pay',
+          path: 'pay',
           name: 'order-pay',
           component: OrderPay,
         },
         {
-          path: '/confirm',
+          path: 'confirm',
           name: 'order-confirm',
           component: OrderConfirm,
         },
+        {
+          path: 'alipay',
+          name: 'alipay',
+          component: Alipay,
+        }
       ]
     }
   ]
