@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "calendar.vue": "0.0.1",
     "core-js": "^3.6.5",
     "qrcode": "^1.4.4",
