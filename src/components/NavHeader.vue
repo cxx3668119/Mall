@@ -35,7 +35,7 @@
                 >
                   <a :href="'/#/product/' + item.id" target="_blank">
                     <div class="pro-img">
-                      <img :src="item.mainImage" :alt="item.subtitle" />
+                      <img v-lazy="'item.mainImage'" :alt="item.subtitle" />
                     </div>
                     <div class="pro-name">{{ item.name }}</div>
                     <div class="pro-price">{{ item.price }}</div>
@@ -125,7 +125,7 @@ export default {
   name: "nav-header",
   data() {
     return {
-      username: "",
+      username: "jack",
       phoneList: [],
     };
   },
@@ -263,6 +263,7 @@ export default {
             box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
             z-index: 10;
             transition: height 0.2s;
+            background-color: #fff;
             .product {
               position: relative;
               float: left;
