@@ -42,6 +42,8 @@ axios.interceptors.response.use(function (response) {
 });
 
 // Vue.use(VueAxios, axios);
+Vue.prototype.axios = axios;
+
 Vue.use(VueCookie);
 Vue.use(VueLazyLoad, {
   loading: '/imgs/loading-svg/loading-bars.svg'

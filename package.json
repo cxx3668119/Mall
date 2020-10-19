@@ -3,17 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --mode=development",
+    "test": "vue-cli-service serve --mode=test",
+    "prev": "vue-cli-service serve --mode=prev",
+    "build": "vue-cli-service build --mode=production",
     "lint": "vue-cli-service lint"
-  },
-  "rules": {
-    "generator-star-spacing": "off",
-    "no-tabs": "off",
-    "no-unused-vars": "off",
-    "no-console": "off",
-    "no-irregular-whitespace": "off",
-    "no-debugger": "off"
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
