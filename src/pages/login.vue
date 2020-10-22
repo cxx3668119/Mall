@@ -32,18 +32,18 @@
     </div>
     <div class="footer">
       <div class="footer-link">
-        <a href="https://privacy.mi.com/all/zh_CN/" target="_blank">
-          小米集团隐私政策</a
+        <a href="https://www.imooc.com/u/1343480" target="_blank"
+          >河畔一角主页</a
         ><span>|</span>
-        <a href="https://github.com/cxx3668119" target="_blank"> 我的github</a
+        <a href="https://coding.imooc.com/class/113.html" target="_blank"
+          >Vue全栈课程</a
         ><span>|</span>
-        <a href="https://privacy.mi.com/all/zh_CN/" target="_blank">
-          小米商城隐私政策</a
+        <a href="https://coding.imooc.com/class/236.html" target="_blank"
+          >React全家桶课程</a
         ><span>|</span>
-        <a href="https://www.mi.com/about/user-agreement" target="_blank">
-          小米商城用户协议</a
-        ><span>|</span>
-        <a href="#">我的主页</a>
+        <a href="https://coding.imooc.com/class/343.html" target="_blank"
+          >微信支付专项课程（H5+小程序/云+Node+MongoDB）</a
+        >
       </div>
       <p class="copyright">
         Copyright ©2019 mi.futurefe.com All Rights Reserved.

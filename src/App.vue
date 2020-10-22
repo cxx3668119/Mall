@@ -7,6 +7,26 @@
 <script>
 export default {
   name: "app",
+  components: {},
+  data() {
+    return {};
+  },
+  // mounted() {
+  //   this.getUser();
+  //   this.getCartCount();
+  // },
+  method: {
+    getUser() {
+      this.axios.get("/user").then(() => {
+        //to-do 保存到Vuex里
+      });
+    },
+    getCartCount() {
+      this.axios.get("/carts/products/sum").then(() => {
+        //to-do 保存到Vuex里
+      });
+    },
+  },
 };
 </script>
 
