@@ -6,7 +6,7 @@ import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
 import { Message } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-// import store from './store'
+import store from './store'
 import App from './App.vue'
 // import env from './env'
 // mock开关
@@ -52,7 +52,7 @@ Vue.prototype.$message = Message;
 Vue.config.productionTip = false
 
 new Vue({
-  // store,
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

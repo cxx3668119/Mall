@@ -1,4 +1,4 @@
-<template>
+<template v-slot:pagination v-slot:button-prev v-slot:button-next>
   <div class="index">
     <div class="container">
       <div class="swiper-box">
@@ -43,16 +43,17 @@
             </li>
           </ul>
         </div>
+        <div class="swiper-pagination pagination"></div>
         <swiper v-bind:options="swiperOption">
           <swiper-slide v-for="(item, index) in slideList" v-bind:key="index">
             <a v-bind:href="'/#/product/' + item.id"
               ><img v-bind:src="item.img"
             /></a>
+
+            <div class="swiper-button-prev button-prev"></div>
+            <div class="swiper-button-next button-next"></div>
           </swiper-slide>
           <!-- Optional controls -->
-          <!-- <div class="swiper-pagination" slot="pagination"></div>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div> -->
         </swiper>
       </div>
       <div class="ads-box">
@@ -166,7 +167,7 @@ export default {
         },
         {
           id: "",
-          img: "/imgs/slider/slide-1.jpg",
+          img: "/imgs/slider/slide-5.jpg",
         },
       ],
       menuList: [
@@ -259,6 +260,16 @@ export default {
 @import "./../assets/scss/mixin.scss";
 .index {
   .swiper-box {
+    position: relative;
+    .swiper-pagination {
+      position: absolute;
+      top: 88%;
+      left: 49%;
+      width: 100px;
+      .swiper-pagination-bullet {
+        margin-right: 4px;
+      }
+    }
     .nav-menu {
       position: absolute;
       width: 264px;
@@ -327,6 +338,7 @@ export default {
     }
     .swiper-container {
       height: 451px;
+
       .swiper-button-prev {
         left: 274px;
       }
