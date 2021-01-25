@@ -11,11 +11,12 @@
         </h2>
       </div>
       <div class="username">
-        <a href="javascript:;">{{ username }}]</a>
+        <a href="javascript:;">{{ username }}</a>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import { mapState } from "vuex";
