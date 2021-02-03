@@ -113,7 +113,11 @@
         </div>
         <div class="header-search">
           <div class="wrapper">
-            <input type="text" name="keyword" />
+            <input
+              type="text"
+              name="keyword"
+              placeholder="武汉东湖学院陈新昕"
+            />
             <a href="javascript:;"></a>
           </div>
         </div>
@@ -191,6 +195,9 @@ export default {
 @import "./../assets/scss/base.scss";
 @import "./../assets/scss/mixin.scss";
 @import "./../assets/scss/config.scss";
+.header-logo {
+  overflow: hidden;
+}
 .header {
   .nav-topbar {
     height: 39px;
