@@ -22,7 +22,7 @@
     </div>
     <div class="nav-header">
       <div class="container">
-        <div class="header-logo">
+        <div class="header-logo" style="margin-top: 0px">
           <a href="/#/index"></a>
         </div>
         <div class="header-menu">
@@ -174,7 +174,7 @@ export default {
     //   })
     // },
     logout() {
-      this.axios.post("/api/user/logout").then(() => {
+      this.axios.post("/user/logout").then(() => {
         this.$message.success("退出成功");
         this.$cookie.set("userId", "", { expires: "-1" });
         this.$store.dispatch("saveUserName", "");

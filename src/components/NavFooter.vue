@@ -14,12 +14,12 @@
         小米商城隐私政策</a
       ><span>|</span>
       <a href="https://www.mi.com/about/user-agreement" target="_blank">
-        小米商城用户协议</a
+        最终解释权归陈新昕所有</a
       ><span>|</span>
       <a href="#">我的主页</a>
     </div>
     <div class="copyrigth">
-      Copyright ©2020 <span class="mainweb">mi.futurefe.com</span> All Rights
+      Copyright ©2020 <span class="mainweb">Chenxinxin</span> All Rights
       Reserved.
     </div>
   </div>
