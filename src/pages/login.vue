@@ -1,9 +1,26 @@
 <template>
   <div class="login">
-    <div class="container">
-      <a href="/#/index"><img src="/imgs/login-logo.png" alt="" /></a>
-    </div>
     <div class="wrapper">
+      <!-- 粒子 -->
+      <vue-particles
+        class="particles"
+        color="#fff"
+        :particleOpacity="0.7"
+        :particlesNumber="60"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#fff"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="2"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
       <div class="container">
         <div class="login-form">
           <h3>
@@ -30,26 +47,19 @@
         </div>
       </div>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
       <div class="footer-link">
-        <a href="https://www.imooc.com/u/1343480" target="_blank"
-          >河畔一角主页</a
-        ><span>|</span>
-        <a href="https://coding.imooc.com/class/113.html" target="_blank"
-          >Vue全栈课程</a
-        ><span>|</span>
-        <a href="https://coding.imooc.com/class/236.html" target="_blank"
-          >React全家桶课程</a
-        ><span>|</span>
-        <a href="https://coding.imooc.com/class/343.html" target="_blank"
-          >微信支付专项课程（H5+小程序/云+Node+MongoDB）</a
-        >
+        <a href="/#/index" target="_blank">小米商城</a><span>|</span>
+        <a href="https://github.com/cxx3668119" target="_blank">我的Github</a><span>|</span>
+        <a href="https://juejin.cn/user/1688471139790455" target="_blank">我的博客</a><span></span>
       </div>
       <p class="copyright">
-        Copyright ©2019 mi.futurefe.com All Rights Reserved.
-      </p>
-    </div>
+        Copyright ©2021
+        最终解释权归陈新昕所有
+      </p> -->
   </div>
+
+  <!-- </div> -->
 </template>
 <script>
 import { mapActions } from "vuex";
@@ -66,7 +76,7 @@ export default {
     login() {
       let { username, password } = this;
       this.axios
-        .post("/user/login", {
+        .post("/api/user/login", {
           username,
           password,
         })
@@ -85,7 +95,7 @@ export default {
     ...mapActions(["saveUserName"]),
     register() {
       this.axios
-        .post("/user/register", {
+        .post("/api/user/register", {
           username: "admin1",
           password: "admin1",
           email: "admin1@163.com",
@@ -93,6 +103,16 @@ export default {
         .then(() => {
           this.$message.success("注册成功");
         });
+    },
+    lucency() {
+      //视图透明度
+      let loginFrom = document.querySelector(".login-form");
+      loginFrom.style.opacity = 1.0;
+    },
+    unlucency() {
+      //视图透明度
+      let loginFrom = document.querySelector(".login-form");
+      loginFrom.style.opacity = 0.5;
     },
   },
 };
@@ -106,10 +126,18 @@ export default {
       height: 100%;
     }
   }
+  .particles {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
   .wrapper {
-    background: url("/imgs/login-bg.jpg") no-repeat center;
+    background: url("/imgs/login-bg-2.jpg") no-repeat center / 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
     .container {
-      height: 576px;
+      height: 100%;
       .login-form {
         box-sizing: border-box;
         padding-left: 31px;
@@ -117,9 +145,15 @@ export default {
         width: 410px;
         height: 510px;
         background-color: #ffffff;
-        position: absolute;
+        opacity: 0.85;
         bottom: 29px;
         right: 0;
+        position: absolute;
+        top: 150px;
+        right: 0;
+        left: 0;
+        transform: scale(0.9);
+        margin: auto;
         h3 {
           line-height: 23px;
           font-size: 24px;

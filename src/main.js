@@ -8,6 +8,7 @@ import { Message } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
 import App from './App.vue'
+import VueParticles from 'vue-particles'
 // import env from './env'
 // mock开关
 const mock = false;
@@ -43,7 +44,7 @@ axios.interceptors.response.use(function (response) {
 
 // Vue.use(VueAxios, axios);
 Vue.prototype.axios = axios;
-
+Vue.use(VueParticles)//粒子特效
 Vue.use(VueCookie);
 Vue.use(VueLazyLoad, {
   loading: '/imgs/loading-svg/loading-bars.svg'
