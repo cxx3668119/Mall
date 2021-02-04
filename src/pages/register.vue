@@ -1,12 +1,12 @@
 <template>
-  <div class="login">
+  <div class="register">
     <div class="wrapper">
       <!-- 粒子 -->
       <vue-particles class="particles" color="#fff" :particleOpacity="0.7" :particlesNumber="60" shapeType="circle" :particleSize="4" linesColor="#fff" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="2" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push">
       </vue-particles>
       <div class="login-form">
         <h3>
-          <span class="checked">帐号登录</span><span class="sep-line">|</span><span>扫码登录</span>
+          <span class="checked">注册</span>
         </h3>
         <div class="input">
           <input type="text" placeholder="请输入帐号" v-model="username" />
@@ -14,13 +14,13 @@
         <div class="input">
           <input type="password" placeholder="请输入密码" v-model="password" />
         </div>
+        <div class="input">
+          <input type="password" placeholder="再次输入确认" v-model="password1" />
+        </div>
         <div class="btn-box">
-          <a href="javascript:;" class="btn" @click="login">登录</a>
+          <a href="javascript:;" class="btn" @click="register">立即注册</a>
         </div>
-        <div class="tips">
-          <div class="sms" @click="register">手机短信登录/注册</div>
-          <div class="reg"><a href="/#/register">立即注册</a><span>|</span><a href="#">忘记密码？</a></div>
-        </div>
+
         <div class="cxx">
           <a href="https://github.com/cxx3668119">我的Github </a><span>|</span><a href="https://juejin.cn/user/1688471139790455"> 我的博客</a>
         </div>
@@ -46,7 +46,7 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-  name: "login",
+  name: "register",
   data() {
     return {
       username: "",
@@ -78,12 +78,13 @@ export default {
     register() {
       this.axios
         .post("/user/register", {
-          username: "admin1",
-          password: "admin1",
-          email: "admin1@163.com",
+          username: this.username,
+          password: this.password,
+          // email: "admin1@163.com",
         })
         .then(() => {
           this.$message.success("注册成功");
+          this.$router.push('./login')
         });
     },
     lucency() {
@@ -112,7 +113,7 @@ a {
   float: right;
   margin-top: 70px;
 }
-.login {
+.register {
   & > .container {
     height: 113px;
     img {
@@ -136,7 +137,7 @@ a {
       padding-left: 31px;
       padding-right: 31px;
       width: 410px;
-      height: 510px;
+      height: 550px;
       background-color: #ffffff;
       opacity: 0.85;
       bottom: 29px;

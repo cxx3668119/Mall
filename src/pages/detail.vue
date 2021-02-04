@@ -5,18 +5,10 @@
       <div class="container clearfix">
         <div class="swiper">
           <swiper :options="swiperOption">
-            <swiper-slide
-              ><img src="/imgs/detail/phone-1.jpg" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/imgs/detail/phone-2.jpg" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/imgs/detail/phone-3.jpg" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/imgs/detail/phone-4.jpg" alt=""
-            /></swiper-slide>
+            <swiper-slide><img src="/imgs/detail/phone-1.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="/imgs/detail/phone-2.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="/imgs/detail/phone-3.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="/imgs/detail/phone-4.jpg" alt="" /></swiper-slide>
             <!-- Optional controls -->
             <template v-slot:pagination>
               <div class="swiper-pagination pagination"></div>
@@ -41,18 +33,10 @@
           </div>
           <div class="item-version clearfix">
             <h2>选择版本</h2>
-            <div
-              class="phone fl"
-              :class="{ checked: version == 1 }"
-              @click="version = 1"
-            >
+            <div class="phone fl" :class="{ checked: version == 1 }" @click="version = 1">
               6GB+64GB 全网通
             </div>
-            <div
-              class="phone fr"
-              :class="{ checked: version == 2 }"
-              @click="version = 2"
-            >
+            <div class="phone fr" :class="{ checked: version == 2 }" @click="version = 2">
               4GB+64GB 移动4G
             </div>
           </div>
@@ -75,9 +59,7 @@
             <div class="phone-total">总计：{{ product.price }}元</div>
           </div>
           <div class="btn-group">
-            <a href="javascript:;" class="btn btn-huge fl" @click="addCart"
-              >加入购物车</a
-            >
+            <a href="javascript:;" class="btn btn-huge fl" @click="addCart">加入购物车</a>
           </div>
         </div>
       </div>
@@ -138,6 +120,7 @@ export default {
         .then((res = { cartProductVoList: 0 }) => {
           this.$store.dispatch("saveCartCount", res.cartTotalQuantity);
           // this.$router.push('/cart');
+          this.$message.success("添加成功");
         });
     },
   },
